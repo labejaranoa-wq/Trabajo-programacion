@@ -1,0 +1,51 @@
+track_name,artist_name,genre,popularity,danceability,energy,tempo,duration_ms,explicit,year
+Blinding Lights,The Weeknd,pop,96,0.51,0.73,171.0,200040,0,2019
+Shape of You,Ed Sheeran,pop,93,0.82,0.64,95.9,233713,0,2017
+Dance Monkey,Tones and I,pop,89,0.83,0.63,98.0,209438,0,2019
+Rockstar,Post Malone,hip-hop,91,0.74,0.56,159.9,218146,1,2017
+One Dance,Drake,r&b,88,0.79,0.62,103.9,173987,0,2016
+Levitating,Dua Lipa,pop,87,0.70,0.82,103.0,203064,0,2020
+Stay,The Kid LAROI,pop,95,0.59,0.72,170.0,141806,1,2021
+Peaches,Justin Bieber,r&b,90,0.67,0.68,90.0,198082,1,2021
+Good 4 U,Olivia Rodrigo,pop,94,0.56,0.66,167.0,178147,0,2021
+drivers license,Olivia Rodrigo,pop,88,0.32,0.43,73.0,242014,0,2021
+Montero,Lil Nas X,pop,92,0.76,0.59,179.0,137773,1,2021
+Save Your Tears,The Weeknd,pop,91,0.65,0.82,118.0,215626,0,2020
+Watermelon Sugar,Harry Styles,pop,86,0.55,0.82,95.0,174000,0,2020
+Dynamite,BTS,k-pop,90,0.74,0.76,114.0,199054,0,2020
+Permission to Dance,BTS,k-pop,82,0.72,0.76,124.0,187254,0,2021
+Butter,BTS,k-pop,86,0.74,0.69,110.0,164410,0,2021
+Industry Baby,Lil Nas X,hip-hop,93,0.74,0.70,149.0,212000,1,2021
+Mood,24kGoldn,hip-hop,89,0.71,0.70,91.0,140526,1,2020
+Therefore I Am,Billie Eilish,pop,87,0.75,0.55,135.0,174088,0,2020
+Happier Than Ever,Billie Eilish,pop,84,0.42,0.35,60.0,294670,0,2021
+bad guy,Billie Eilish,pop,85,0.70,0.43,135.0,194088,0,2019
+Ocean Eyes,Billie Eilish,pop,78,0.59,0.32,164.0,201671,0,2016
+lovely,Billie Eilish,pop,81,0.35,0.15,115.0,200185,0,2018
+Circles,Post Malone,pop,88,0.69,0.54,120.0,215280,0,2019
+Sunflower,Post Malone,pop,90,0.76,0.48,93.0,158040,0,2018
+Lose Yourself,Eminem,hip-hop,83,0.85,0.62,85.0,326440,1,2002
+Rap God,Eminem,hip-hop,79,0.87,0.66,77.0,363000,1,2013
+Without Me,Eminem,hip-hop,77,0.80,0.75,93.0,291160,0,2002
+In My Feelings,Drake,hip-hop,86,0.87,0.64,91.0,217893,1,2018
+God's Plan,Drake,hip-hop,90,0.75,0.44,77.0,198715,1,2018
+Hotline Bling,Drake,r&b,88,0.79,0.51,135.0,267067,0,2015
+Take Care,Drake,r&b,84,0.63,0.34,74.0,258426,1,2011
+HUMBLE.,Kendrick Lamar,hip-hop,87,0.91,0.63,150.0,177000,1,2017
+DNA.,Kendrick Lamar,hip-hop,83,0.53,0.74,144.0,185000,1,2017
+Swimming Pools,Kendrick Lamar,hip-hop,78,0.61,0.50,81.0,314000,1,2012
+Uptown Funk,Mark Ronson,funk,89,0.88,0.83,115.0,269000,0,2014
+24K Magic,Bruno Mars,funk,87,0.82,0.80,106.0,225900,0,2016
+That's What I Like,Bruno Mars,r&b,85,0.84,0.62,119.0,206690,0,2016
+Leave The Door Open,Bruno Mars,r&b,88,0.63,0.55,95.0,243925,1,2021
+Locked Out of Heaven,Bruno Mars,pop,83,0.82,0.81,144.0,233720,0,2012
+Shallow,Lady Gaga,pop,88,0.44,0.44,96.0,216000,0,2018
+Bad Romance,Lady Gaga,pop,82,0.58,0.74,119.0,294973,0,2009
+Poker Face,Lady Gaga,pop,80,0.77,0.74,119.0,237893,0,2008
+Telephone,Lady Gaga,pop,78,0.83,0.77,122.0,222587,0,2009
+Born This Way,Lady Gaga,pop,76,0.55,0.75,124.0,260146,0,2011
+Rolling in the Deep,Adele,pop,87,0.73,0.72,105.0,228320,0,2010
+Someone Like You,Adele,pop,86,0.33,0.25,68.0,285640,0,2011
+Hello,Adele,pop,89,0.44,0.28,79.0,295493,0,2015
+Easy On Me,Adele,pop,91,0.35,0.22,73.0,224583,0,2021
+Set Fire to the Rain,Adele,pop,84,0.54,0.56,131.0,242893,0,2011
