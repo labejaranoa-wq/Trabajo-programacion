@@ -1,11 +1,11 @@
 # Sound Analytics Team
-Proyecto de implementacion de herramienta de análisis de datos en dataset sobre la predicción de popularidad de canciones en Spotify
+Proyecto de implementación de herramienta de análisis de datos en dataset sobre la predicción de popularidad de canciones en Spotify.
+---
 **UNIVERSIDAD NACIONAL DE COLOMBIA**
 Programación de computadores
 David Alberto Herrrera Álvarez 
 Maria Catalina Rodríguez Cardona
----
-
+2026
 ## 👥 Integrantes
 * **Laura Jimena Bejarano Arias** - [labejaranoa-wq]
 * **Dayanna Leyton Bustos** - [Usuario GitHub]
