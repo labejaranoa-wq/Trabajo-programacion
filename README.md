@@ -8,7 +8,7 @@ Proyecto de implementación de herramienta de análisis de datos en dataset sobr
 - 2026 
 ## 👥 Integrantes
 * **Laura Jimena Bejarano Arias** - [labejaranoa-wq]
-* **Dayanna Leyton Bustos** - [Usuario GitHub]
+* **Dayanna Leyton Bustos** - [dleyton-collab]
 * **Nombre Estudiante** - [Usuario GitHub]
 * **Nombre Estudiante** - [Usuario GitHub]
 * **Nombre Estudiante** - [Usuario GitHub]
