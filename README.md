@@ -1,11 +1,11 @@
-# Sound Analytics Team
+# 👾 Sound Analytics Team
 Proyecto de implementación de herramienta de análisis de datos en dataset sobre la predicción de popularidad de canciones en Spotify.
 ---
-**UNIVERSIDAD NACIONAL DE COLOMBIA**
- Programación de computadores
- David Alberto Herrrera Álvarez 
- Maria Catalina Rodríguez Cardona
- 2026
+🦉**UNIVERSIDAD NACIONAL DE COLOMBIA**
+- Programación de computadores  
+- **Docente:** David Alberto Herrrera Álvarez 
+- **Monitora** Maria Catalina Rodríguez Cardona 
+- 2026 
 ## 👥 Integrantes
 * **Laura Jimena Bejarano Arias** - [labejaranoa-wq]
 * **Dayanna Leyton Bustos** - [Usuario GitHub]
@@ -17,9 +17,8 @@ Proyecto de implementación de herramienta de análisis de datos en dataset sobr
 
 ---
 
-## Objetivo del proyecto
-El objetivo es construir un DataLab: herramienta de análisis de datos que permite consultar, explorar y visualizar un dataset. El objeto de estudio es un dataset sobre el **Potencial de éxito en canciones de Spotify** que usa mediciones de audio para clasificar canciones de la platafroma de musica respecto a la popularidad que pueden alcanzar y asimismo obtener las mejores opciones de inversión en producción, campañas y marketing en la industria musical.
-
+## 🎯 Objetivo del proyecto
+El objetivo es construir un DataLab: herramienta de análisis de datos que permite consultar, explorar y visualizar un dataset. El objeto de estudio es un dataset sobre el **potencial de éxito en canciones de Spotify** que usa mediciones de audio para clasificar canciones de la platafroma de musica respecto a la popularidad que pueden alcanzar y asimismo obtener las mejores opciones de inversión en producción, campañas y marketing en la industria musical.
 ### Preguntas de Investigación
 Con el apoyo de esta herramienta se busca dar respuesta a las siguientes preguntas:
 1.  ¿Cuántas canciones superan los 4 minutos de duración?
@@ -29,7 +28,7 @@ Con el apoyo de esta herramienta se busca dar respuesta a las siguientes pregunt
 
 ---
 
-## Entrega 1: Explorador
+## 💡 Entrega 1: Explorador
 Mediante el funcionamiento de un programa de consola se carga el dataset seleccionado y es recorrido mediante bucles y el uso de funciones y condicionales para responder a las preguntas planteadas por el equipo.
 
 ### Funcionalidades implementadas:
