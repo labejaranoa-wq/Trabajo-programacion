@@ -44,3 +44,4 @@ Mediante el funcionamiento de un programa de consola se carga el dataset selecci
 ### 🪁 Producto creativo:
 Rutas de acceso al material complementario de la entrega:
 * 📑 **Póster creativo:** https://canva.link/xieo0rkkoeokdvs
+* 📄**Documento de contribucones por integrante:** https://docs.google.com/document/d/1LSCMckuBDdb3TX0yAz6pGdlRR296shXOC53y-VRI0Z0/edit?usp=sharing
