@@ -37,4 +37,10 @@ Mediante el funcionamiento de un programa de consola se carga el dataset selecci
 3.  **Estadísticas:** Calcula el máximo, mínimo y promedio de campos como popularidad, tiempo y energía.
 4.  **Otras (Opcional):**
 
-### Instrucciones de Ejecución
+### Instrucciones de Ejecución:
+
+---
+
+### 🪁 Producto creativo:
+Rutas de acceso al material complementario de la entrega:
+* 📑 **Póster creativo:** https://canva.link/xieo0rkkoeokdvs
