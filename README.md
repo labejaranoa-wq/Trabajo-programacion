@@ -9,7 +9,7 @@ Proyecto de implementación de herramienta de análisis de datos en dataset sobr
 ## 👥 Integrantes
 * **Laura Jimena Bejarano Arias** - [labejaranoa-wq]
 * **Dayanna Leyton Bustos** - [dleyton-collab]
-* **Nombre Estudiante** - [Usuario GitHub]
+* **Juan Diego Rodriguez Delgado** - [juarodríguezde-bit]
 * **Nombre Estudiante** - [Usuario GitHub]
 * **Nombre Estudiante** - [Usuario GitHub]
 * **Nombre Estudiante** - [Usuario GitHub]
