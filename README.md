@@ -11,7 +11,7 @@ Proyecto de implementación de herramienta de análisis de datos en dataset sobr
 * **Dayanna Leyton Bustos** - [dleyton-collab]
 * **Juan Diego Rodriguez Delgado** - [juarodríguezde-bit]
 * **Cristian Andres Ortiz Camargo** - [criortizca]
-* **Nombre Estudiante** - [Usuario GitHub]
+* **Miguel Ricardo Parra Sánchez** - [Usuario GitHub]
 * **Nombre Estudiante** - [Usuario GitHub]
 * **Nombre Estudiante** - [Usuario GitHub]
 
