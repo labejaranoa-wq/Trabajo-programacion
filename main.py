@@ -1,19 +1,6 @@
-# main.py
-# DataLab - Entrega 1: Explorador
-# Dataset: Predicción de popularidad de canciones en Spotify
-
 ARCHIVO_DATASET = "spotify_pequeno.csv"
 
-
-# ──────────────────────────────────────────
-#  Carga del dataset
-# ──────────────────────────────────────────
-
 def cargar_datos(ruta):
-    """
-    Lee el archivo CSV línea por línea con open() y split().
-    Devuelve una lista de diccionarios, uno por canción.
-    """
     canciones = []
     try:
         with open(ruta, encoding="utf-8") as f:
@@ -27,7 +14,6 @@ def cargar_datos(ruta):
         print("  El archivo está vacío.")
         return []
 
-    # Primera línea = encabezados
     encabezados = [h.strip() for h in lineas[0].split(",")]
 
     for numero, linea in enumerate(lineas[1:], start=2):
@@ -35,7 +21,7 @@ def cargar_datos(ruta):
         if not linea:          # saltar filas vacías
             continue
         valores = linea.split(",")
-        # Si hay más comas que columnas (p.ej. nombre con coma) se trunca al nro de encabezados
+       
         if len(valores) < len(encabezados):
             continue
         cancion = {}
@@ -46,31 +32,20 @@ def cargar_datos(ruta):
     return canciones
 
 
-# ──────────────────────────────────────────
-#  Funciones de análisis
-# ──────────────────────────────────────────
-
 def buscar_por_termino(canciones, termino):
-    """
-    Recorre todas las canciones y devuelve las que contienen
-    el término en cualquiera de sus campos (búsqueda case-insensitive).
-    """
+ 
     termino_lower = termino.lower()
     resultados = []
     for c in canciones:
         for valor in c.values():
             if termino_lower in valor.lower():
                 resultados.append(c)
-                break   # no agregar la misma canción dos veces
+                break  
     return resultados
 
 
 def estadisticas_campo(canciones, campo):
-    """
-    Calcula máximo, mínimo y promedio de un campo numérico.
-    Devuelve un diccionario con los tres valores, o None si el campo no existe
-    o no tiene datos numéricos.
-    """
+   
     valores = []
     for c in canciones:
         if campo not in c:
@@ -80,7 +55,7 @@ def estadisticas_campo(canciones, campo):
         try:
             valores.append(float(texto))
         except ValueError:
-            pass   # ignorar celdas no numéricas
+            pass   
 
     if not valores:
         return None
@@ -100,9 +75,7 @@ def estadisticas_campo(canciones, campo):
 
 
 def filtrar_por_valor(canciones, campo, umbral):
-    """
-    Devuelve las canciones donde el campo numérico es mayor al umbral dado.
-    """
+    
     resultados = []
     for c in canciones:
         if campo not in c:
@@ -114,12 +87,8 @@ def filtrar_por_valor(canciones, campo, umbral):
             pass
     return resultados
 
-
 def agrupar_por_categoria(canciones, campo):
-    """
-    Cuenta cuántas canciones hay por cada valor distinto del campo de texto.
-    Devuelve una lista de tuplas (valor, conteo) ordenada de mayor a menor.
-    """
+
     conteo = {}
     for c in canciones:
         if campo not in c:
@@ -129,8 +98,6 @@ def agrupar_por_categoria(canciones, campo):
             continue
         conteo[clave] = conteo.get(clave, 0) + 1
 
-    # ordenar de mayor a menor sin sorted() con key lambda —
-    # usamos burbuja para no depender de funciones avanzadas
     items = list(conteo.items())
     for i in range(len(items)):
         for j in range(i + 1, len(items)):
@@ -138,13 +105,8 @@ def agrupar_por_categoria(canciones, campo):
                 items[i], items[j] = items[j], items[i]
     return items
 
-
-# ──────────────────────────────────────────
-#  Utilidades de impresión
-# ──────────────────────────────────────────
-
 def imprimir_cancion(cancion, encabezados):
-    """Muestra una canción de forma legible en consola."""
+    
     partes = []
     for clave in encabezados:
         if clave in cancion:
@@ -153,14 +115,14 @@ def imprimir_cancion(cancion, encabezados):
 
 
 def obtener_encabezados(canciones):
-    """Devuelve los encabezados del dataset (claves del primer registro)."""
+  
     if not canciones:
         return []
     return list(canciones[0].keys())
 
 
 def listar_campos_numericos(canciones):
-    """Detecta qué campos parecen numéricos revisando el primer registro."""
+    
     numericos = []
     if not canciones:
         return numericos
@@ -174,17 +136,13 @@ def listar_campos_numericos(canciones):
 
 
 def listar_campos_texto(canciones):
-    """Detecta campos de texto (los que no son numéricos)."""
+    
     if not canciones:
         return []
     todos = list(canciones[0].keys())
     numericos = set(listar_campos_numericos(canciones))
     return [c for c in todos if c not in numericos]
 
-
-# ──────────────────────────────────────────
-#  Menú principal
-# ──────────────────────────────────────────
 
 def mostrar_menu():
     print("\n" + "─" * 45)
@@ -206,7 +164,7 @@ def opcion_buscar(canciones, encabezados):
         return
     resultados = buscar_por_termino(canciones, termino)
     print(f"\n  Se encontraron {len(resultados)} registros para '{termino}':\n")
-    for c in resultados[:20]:       # mostrar máximo 20 para no saturar la consola
+    for c in resultados[:20]:       
         imprimir_cancion(c, encabezados)
     if len(resultados) > 20:
         print(f"\n  ... y {len(resultados) - 20} más.")
@@ -270,19 +228,13 @@ def opcion_agrupar(canciones):
     grupos = agrupar_por_categoria(canciones, campo)
     print(f"\n  Distribución por '{campo}':\n")
     for valor, conteo in grupos:
-        barra = "█" * min(conteo, 40)   # barra visual proporcional
+        barra = "█" * min(conteo, 40)   
         print(f"  {valor:<25} {conteo:>4}  {barra}")
-
 
 def opcion_preview(canciones, encabezados):
     print(f"\n  Primeras 10 canciones del dataset:\n")
     for c in canciones[:10]:
         imprimir_cancion(c, encabezados)
-
-
-# ──────────────────────────────────────────
-#  Punto de entrada
-# ──────────────────────────────────────────
 
 def main():
     print("\n  Cargando dataset...")
