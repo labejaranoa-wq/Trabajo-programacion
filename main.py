@@ -18,7 +18,7 @@ def cargar_datos(ruta):
 
     for numero, linea in enumerate(lineas[1:], start=2):
         linea = linea.strip()
-        if not linea:          # saltar filas vacías
+        if not linea:          
             continue
         valores = linea.split(",")
        
@@ -51,7 +51,7 @@ def estadisticas_campo(canciones, campo):
         if campo not in c:
             continue
         texto = c[campo].strip()
-        # intentar convertir a float sin usar librerías externas
+       
         try:
             valores.append(float(texto))
         except ValueError:
