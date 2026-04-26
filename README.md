@@ -12,7 +12,7 @@ Proyecto de implementación de herramienta de análisis de datos en dataset sobr
 * **Juan Diego Rodriguez Delgado** - [juarodríguezde-bit]
 * **Cristian Andres Ortiz Camargo** - [criortizca]
 * **Miguel Ricardo Parra Sánchez** - [miparrasa]
-* **Nombre Estudiante** - [Usuario GitHub]
+* **Maria Andrea Marin Velasco** - [mmarinve]
 * **Nombre Estudiante** - [Usuario GitHub]
 
 ---
