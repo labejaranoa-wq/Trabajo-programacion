@@ -39,8 +39,8 @@ Mediante el funcionamiento de un programa de consola se carga el dataset selecci
 
 ### 🐾 Instrucciones de Ejecución:
 1. **Requisitos previos:**
-   ** Aseguúrese de tener instalado Python 3.x.
-   ** Descargue los archivos main.py y spotify_pequeno.csv, estos deben estar en la misma carpeta.
+   * Aseguúrese de tener instalado Python 3.x.
+   * Descargue los archivos main.py y spotify_pequeno.csv, estos deben estar en la misma carpeta.
 2. **Ejecución:**
    Abra una terminal o consola de comandos en la carpeta del proyecto y ejecute: python main.py
 3. **Guía del menú interactivo:**
