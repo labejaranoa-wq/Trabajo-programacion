@@ -38,7 +38,19 @@ Mediante el funcionamiento de un programa de consola se carga el dataset selecci
 4.  **Otras (Agrupación por categoría):** Cuenta la cantidad de canciones lanzadas por el artista ingresado.
 
 ### Instrucciones de Ejecución:
-
+1. Requisitos previos:
+   * Aseguúrese de tener instalado Python 3.x.
+   * Descargue los archivos main.py y spotify_pequeno.csv, estos deben estar en la misma carpeta.
+2. Ejecución:
+   Abra una terminal o consola de comandos en la carpeta del proyecto y ejecute: python main.py
+3. Guía del menú interactivo:
+   Una vez iniciado, se verá un menú con 6 opciones:
+   * Opción 1 - Buscar canciones por término: Escriba cualquier palabra (nombre del artista, canción o género). El sistema buscará coincidencias en todas las columnas y mostrará los primeros 20 resultados.
+   * Opción 2 - Estadísticas de un campo numérico: * El programa pondrá en una lista las opciones (ej. popularity, energy, tempo). Para ello debe escribir el nombre del campo tal cual aparece proporcionado. Obtendrá el valor máximo, mínimo y el promedio calculado automáticamente.
+   * Opción 3 - Filtrar por valor numérico: El programa le proporcionará los campos con valores numéricos disponibles, elija el que desee (ej. popularity) y en seguida dijite el umbral (ej. 80). El programa mostrará solo las canciones que superen ese número.
+   * Opción 4 - Agrupar por categoría: Dentro de las opciones que se muestran, elija el campo de texto de su preferencia(como genre o artist_name). El programa generará un ranking visual con barras mostrando los resultados con más presencia en el dataset.
+   * Opción 5 - Mostrar primeras 10 canciones: Una vista rápida para verificar que los encabezados y los datos se cargaron correctamente.
+   * Opción 6 - Salir: Cierra el programa de forma segura.
 ---
 
 ### 🪁 Producto creativo:
