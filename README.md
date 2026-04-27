@@ -13,7 +13,6 @@ Proyecto de implementación de herramienta de análisis de datos en dataset sobr
 * **Cristian Andres Ortiz Camargo** - [criortizca]
 * **Miguel Ricardo Parra Sánchez** - [miparrasa]
 * **Maria Andrea Marin Velasco** - [mmarinve]
-* **Nombre Estudiante** - [Usuario GitHub]
 
 ---
 
@@ -21,10 +20,10 @@ Proyecto de implementación de herramienta de análisis de datos en dataset sobr
 El objetivo es construir un DataLab: herramienta de análisis de datos que permite consultar, explorar y visualizar un dataset. El objeto de estudio es un dataset sobre el **potencial de éxito en canciones de Spotify** que usa mediciones de audio para clasificar canciones de la platafroma de musica respecto a la popularidad que pueden alcanzar y asimismo obtener las mejores opciones de inversión en producción, campañas y marketing en la industria musical.
 ### Preguntas de Investigación
 Con el apoyo de esta herramienta se busca dar respuesta a las siguientes preguntas:
-1.  ¿Cuántas canciones superan los 4 minutos de duración?
-2.  ¿Cuántas canciones del dataset pertenecen a un artista específico ingresado por el usuario?
-3.  ¿Cuál es el nivel mínimo y máximo de danceability registrado en las 50 canciones de prueba?
-4.  ¿Cuántas canciones en total contienen contenido explícito?
+1.  ¿Cuántas y cuáles canciones duran más de determinado tiempo?
+2.  ¿Cuántas y cuáles canciones salieron después de un año específico?
+3.  ¿Cuántas canciones hay por artista?
+4.  Mostrar las primeras 10 canciones de la lista.
 
 ---
 
@@ -57,4 +56,4 @@ Mediante el funcionamiento de un programa de consola se carga el dataset selecci
 Rutas de acceso al material complementario de la entrega:
 * 📑 **Póster creativo:** https://canva.link/xieo0rkkoeokdvs
 * 🎬 **Video:** https://drive.google.com/file/d/1OK9nVW5C-IDDBrkKvGPu1FU2IEyhUKyI/view?usp=sharing
-* 📄**Documento de contribucones por integrante:** https://docs.google.com/document/d/1LSCMckuBDdb3TX0yAz6pGdlRR296shXOC53y-VRI0Z0/edit?usp=sharing
+* 📄**Documento de contribuciones por integrante:** https://docs.google.com/document/d/1LSCMckuBDdb3TX0yAz6pGdlRR296shXOC53y-VRI0Z0/edit?usp=sharing
