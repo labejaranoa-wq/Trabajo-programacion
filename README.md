@@ -34,8 +34,8 @@ Mediante el funcionamiento de un programa de consola se carga el dataset selecci
 ### Funcionalidades implementadas:
 1.  **Carga de datos:** Leer el archivo `spotify_pequeño.csv` (50 registros) línea por línea.
 2.  **Búsqueda:** Encontrar canciones por nombre de la misma o por artista.
-3.  **Estadísticas:** Calcula el máximo, mínimo y promedio de campos como popularidad, tiempo y energía.
-4.  **Otras (Opcional):**
+3.  **Estadísticas:** Calcula el máximo, mínimo y promedio en los diferentes campos de información presentada.
+4.  **Otras (Agrupación por categoría):** Cuenta la cantidad de canciones lanzadas por el artista ingresado.
 
 ### Instrucciones de Ejecución:
 
@@ -44,4 +44,5 @@ Mediante el funcionamiento de un programa de consola se carga el dataset selecci
 ### 🪁 Producto creativo:
 Rutas de acceso al material complementario de la entrega:
 * 📑 **Póster creativo:** https://canva.link/xieo0rkkoeokdvs
+* 🎬 **Video:** https://drive.google.com/file/d/1OK9nVW5C-IDDBrkKvGPu1FU2IEyhUKyI/view?usp=sharing
 * 📄**Documento de contribucones por integrante:** https://docs.google.com/document/d/1LSCMckuBDdb3TX0yAz6pGdlRR296shXOC53y-VRI0Z0/edit?usp=sharing
