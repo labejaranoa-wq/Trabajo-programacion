@@ -60,17 +60,17 @@ Rutas de acceso al material complementario de la entrega:
 
 ---
 
-## 🎵 Entrega 2: Analizador
+##  🕵️ Entrega 2: Analizador
 Ahora se transformará el script básico en una aplicación de software modular, escalable y con persistencia de datos. El sistema debe migrar hacia el uso de herramientas nativas avanzadas (como el módulo csv) para procesar el dataset real completo ('spotify_completo.csv') sin saturar la memoria, organizando la información a través de estructuras de datos justificadas e implementando un sistema interactivo de almacenamiento de resultados.
 
 
-## Funciones implementadas
-1. **Módulos:** Pasar de manejar un archivo único y dividirlo en modulos independientes: main.py (interfaz), analisis.py (lógica) y archivos.py (persistencia).
-2. **Lectura avanzada:** Elimina el .split(",") manual e implementar el módulo nativo csv (csv.DictReader) para procesar las más de 200 filas del dataset real de forma robusta.
-3. **Persistencia de Resultados:** Agregar una opción interactiva que guarda los resultados de búsquedas o filtros en un nuevo archivo .csv, y una opción que carga estos archivos y los analiza de forma aislada.
-4. **Historial de consultas:** Escribir cada consulta en un archivo (registrando fecha, hora, criterio y cantidad de resultados) junto con una opción en el menú para imprimir todo el log en consola.
-5. **Combinación de estructuras de datos:** Se usan de manera simultánea y justificada listas (almacenamiento ordenado), diccionarios (mapeo de datos y conteo de frecuencias) y sets (eliminación de duplicados y validación rápida de entradas).
-6. **Comparación de Grupos:** Función en el menú que permite al usuario elegir dos categorías (ej: género pop vs. rock) y contrastar directamente sus métricas estadísticas (máximos, mínimos y promedios) en una tabla comparativa.
+## 🧩 Funciones implementadas
+* **🗂️Módulos:** Pasar de manejar un archivo único y dividirlo en modulos independientes: main.py (interfaz), analisis.py (lógica) y archivos.py (persistencia).
+* **📖Lectura avanzada:** Elimina el .split(",") manual e implementar el módulo nativo csv (csv.DictReader) para procesar las más de 200 filas del dataset real de forma robusta.
+* **🔐Persistencia de resultados:** Agregar una opción interactiva que guarda los resultados de búsquedas o filtros en un nuevo archivo .csv, y una opción que carga estos archivos y los analiza de forma aislada.
+* **💼Historial de consultas:** Escribir cada consulta en un archivo (registrando fecha, hora, criterio y cantidad de resultados) junto con una opción en el menú para imprimir todo el log en consola.
+* **🎡Combinación de estructuras de datos:** Se usan de manera simultánea y justificada listas (almacenamiento ordenado), diccionarios (mapeo de datos y conteo de frecuencias) y sets (eliminación de duplicados y validación rápida de entradas).
+* **📊Comparación de Grupos:** Función en el menú que permite al usuario elegir dos categorías (ej: género pop vs. rock) y contrastar directamente sus métricas estadísticas (máximos, mínimos y promedios) en una tabla comparativa.
 
 ## Instrucciones de uso
 
@@ -81,7 +81,7 @@ Ahora se transformará el script básico en una aplicación de software modular,
    * `spotify_completo.csv` (Dataset principal con más de 200 filas)
    * `spotify_pequeno.csv` (Subconjunto de pruebas de 50 filas)
 
-*Se recomienda usar al menos las primeras 500 filas del dataset completo puesto que el archivo contiene mas de 100.00 filas y puede sobresaturarse.*
+*⚠️Se recomienda usar al menos las primeras 500 filas del dataset completo puesto que el archivo contiene mas de 100.00 filas y puede saturarse.⚠️*
 
 2. **Preparación:** Abra su terminal o consola de comandos, diríjase a la carpeta del proyecto y ejecute el archivo principal: python 'main.py'.Le aparecerá el menú principal con 8 opciones numéricas, para ejecutar cualquiera de ellas debe digitar el número correspondiente:
 3. **Opción 1 (Búsqueda General):** Le permite escribir cualquier palabra (nombre de canción, artista o género). El sistema buscará coincidencias y enlistará los resultados en pantalla.
@@ -90,7 +90,7 @@ Ahora se transformará el script básico en una aplicación de software modular,
 6. **Opción 4 (Distribución/Ranking):** Agrupa y cuenta cuántas canciones pertenecen a cada categoría dentro de un campo de texto de forma ordenada (de mayor a menor) generando un histograma visual básico en consola.
 7. **Opción 5 (Comparación):** Elija un campo de texto (ej: track_genre), escriba dos grupos diferentes (ej: pop y rock) y una métrica numérica. El programa validará su existencia con conjuntos (sets) y contrastará sus promedios y límites.
 
-*Guardar resultados - persistencia* Cuando realice una búsqueda (Opción 1) o un filtrado (Opción 3), al terminar de listar las canciones, el sistema le preguntará: *¿Desea guardar estos resultados en un nuevo archivo CSV? (s/n).*  Presione s si desea guardarlos y asigne un nombre al nuevo archivo. Se creará un archivo legible separado por comas de forma automática en el directorio.
+💡*Guardar resultados - persistencia* Cuando realice una búsqueda (Opción 1) o un filtrado (Opción 3), al terminar de listar las canciones, el sistema le preguntará: *¿Desea guardar estos resultados en un nuevo archivo CSV? (s/n).*  Presione s si desea guardarlos y asigne un nombre al nuevo archivo. Se creará un archivo legible separado por comas de forma automática en el directorio.
 
 9. **Opción 6 (Registro automático):** Cada acción realizada por usuario queda registrada automáticamente. Esta opción le permitirá consultar el historial acumulado hasta el momento, para lo cual imprimirá una tabla estructurada directamente desde el archivo autogenerado con el nombre de su elección, detallando: la fecha y hora exacta, la operación realizada, los criterios ingresados y el volumen de filas afectadas.
 10. **Opción 7 (Recuperar Archivos Guardados):** Si cerró el programa y desea trabajar únicamente con el subconjunto de datos que guardó en un archivo en el Paso 3 sin procesar la base completa, esta opción le permitirá hacerlo, solo debe ingresar el nombre del archivo guardado. El sistema cambiará la fuente de datos en memoria y todas las búsquedas o estadísticas posteriores se calcularán solo sobre ese archivo.
