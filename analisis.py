@@ -8,9 +8,9 @@ def buscar_por_termino(canciones, termino):
     resultados = []
     for c in canciones:
         for valor in c.values():
-            if termino_lower in valor.lower():
+            if isinstance(valor, str) and termino_lower in valor.lower():
                 resultados.append(c)
-                break  
+                break
     return resultados
 
 def estadisticas_campo(canciones, campo):
