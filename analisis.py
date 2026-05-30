@@ -1,3 +1,8 @@
+import pandas as pd
+
+def cargar_datos(ruta):
+    df = pd.read_csv(ruta)
+    return df
 def buscar_por_termino(canciones, termino):
     termino_lower = termino.lower()
     resultados = []
