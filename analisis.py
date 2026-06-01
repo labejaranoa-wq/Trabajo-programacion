@@ -49,7 +49,7 @@ def agrupar_por_categoria(canciones, campo):
         if not clave: continue
         conteo[clave] = conteo.get(clave, 0) + 1
 
-    # Ordenar de mayor a menor
+  
     return sorted(conteo.items(), key=lambda x: x[1], reverse=True)
 
 def comparar_grupos(canciones, campo_texto, valor1, valor2, campo_numerico):
