@@ -92,15 +92,15 @@ class VentanaPrincipal(QMainWindow):
         boton_estadisticas.clicked.connect(self.ver_estadisticas)
         layout_principal.addWidget(boton_estadisticas)
 
-# CATEGORIAS
-       boton_categorias = QPushButton("🎼 Distribución por género")
-       boton_categorias.clicked.connect(self.ver_categorias)
-       layout_principal.addWidget(boton_categorias)
+        # CATEGORIAS
+        boton_categorias = QPushButton("🎼 Distribución por género")
+        boton_categorias.clicked.connect(self.ver_categorias)
+        layout_principal.addWidget(boton_categorias)
 
-# METRICAS
-       boton_metricas = QPushButton("📈 Métricas numéricas")
-       boton_metricas.clicked.connect(self.ver_metricas)
-       layout_principal.addWidget(boton_metricas)
+        # METRICAS
+        boton_metricas = QPushButton("📈 Métricas numéricas")
+        boton_metricas.clicked.connect(self.ver_metricas)
+        layout_principal.addWidget(boton_metricas)
 
         # BOTÓN SALIR
         boton_salir = QPushButton("Salir")
@@ -142,7 +142,7 @@ class VentanaPrincipal(QMainWindow):
             texto += str(c) + "\n\n"
         self.area_resultados.setText(texto)
 
-        def guardar_resultados(self):
+    def guardar_resultados(self):
         if not self.ultimos_resultados:
             self.area_resultados.setText("Primero haz una búsqueda o filtrado.")
             return
