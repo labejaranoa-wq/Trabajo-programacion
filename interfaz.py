@@ -142,93 +142,88 @@ class VentanaPrincipal(QMainWindow):
             texto += str(c) + "\n\n"
         self.area_resultados.setText(texto)
 
-    def guardar_resultados(self):
-    if not self.ultimos_resultados:
-        self.area_resultados.setText("Primero haz una búsqueda o filtrado.")
-        return
+        def guardar_resultados(self):
+        if not self.ultimos_resultados:
+            self.area_resultados.setText("Primero haz una búsqueda o filtrado.")
+            return
 
-    nombre = "resultados_guardados.csv"
+        nombre = "resultados_guardados.csv"
 
-    with open(nombre, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(
-            f,
-            fieldnames=self.ultimos_resultados[0].keys()
+        with open(nombre, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(
+                f,
+                fieldnames=self.ultimos_resultados[0].keys()
+            )
+            writer.writeheader()
+            writer.writerows(self.ultimos_resultados)
+
+        self.area_resultados.append(
+            f"\n✅ Guardado en {nombre}"
         )
-        writer.writeheader()
-        writer.writerows(self.ultimos_resultados)
 
-    self.area_resultados.append(
-        f"\n✅ Guardado en {nombre}"
-    )
-
-
-def ver_estadisticas(self):
-    canciones = self.df.to_dict("records")
-
-    stats = analisis.estadisticas_campo(
-        canciones,
-        "popularity"
-    )
-
-    if not stats:
-        self.area_resultados.setText(
-            "No se pudieron calcular estadísticas."
-        )
-        return
-
-    texto = (
-        f"ESTADÍSTICAS DE POPULARIDAD\n\n"
-        f"Máximo: {stats['maximo']}\n"
-        f"Mínimo: {stats['minimo']}\n"
-        f"Promedio: {stats['promedio']:.2f}\n"
-        f"Total registros: {stats['total']}"
-    )
-
-    self.area_resultados.setText(texto)
-
-
-def ver_categorias(self):
-    canciones = self.df.to_dict("records")
-
-    categorias = analisis.agrupar_por_categoria(
-        canciones,
-        "track_genre"
-    )
-
-    texto = "DISTRIBUCIÓN POR GÉNERO\n\n"
-
-    for genero, cantidad in categorias[:20]:
-        texto += f"{genero}: {cantidad}\n"
-
-    self.area_resultados.setText(texto)
-
-
-def ver_metricas(self):
-    canciones = self.df.to_dict("records")
-
-    campos = analisis.listar_campos_numericos(
-        canciones
-    )
-
-    texto = "MÉTRICAS NUMÉRICAS\n\n"
-
-    for campo in campos:
+    def ver_estadisticas(self):
+        canciones = self.df.to_dict("records")
 
         stats = analisis.estadisticas_campo(
             canciones,
-            campo
+            "popularity"
         )
 
-        if stats:
-            texto += (
-                f"{campo}\n"
-                f"Promedio: {stats['promedio']:.2f}\n"
-                f"Máximo: {stats['maximo']}\n"
-                f"Mínimo: {stats['minimo']}\n\n"
+        if not stats:
+            self.area_resultados.setText(
+                "No se pudieron calcular estadísticas."
+            )
+            return
+
+        texto = (
+            f"ESTADÍSTICAS DE POPULARIDAD\n\n"
+            f"Máximo: {stats['maximo']}\n"
+            f"Mínimo: {stats['minimo']}\n"
+            f"Promedio: {stats['promedio']:.2f}\n"
+            f"Total registros: {stats['total']}"
+        )
+
+        self.area_resultados.setText(texto)
+
+    def ver_categorias(self):
+        canciones = self.df.to_dict("records")
+
+        categorias = analisis.agrupar_por_categoria(
+            canciones,
+            "track_genre"
+        )
+
+        texto = "DISTRIBUCIÓN POR GÉNERO\n\n"
+
+        for genero, cantidad in categorias[:20]:
+            texto += f"{genero}: {cantidad}\n"
+
+        self.area_resultados.setText(texto)
+
+    def ver_metricas(self):
+        canciones = self.df.to_dict("records")
+
+        campos = analisis.listar_campos_numericos(
+            canciones
+        )
+
+        texto = "MÉTRICAS NUMÉRICAS\n\n"
+
+        for campo in campos:
+            stats = analisis.estadisticas_campo(
+                canciones,
+                campo
             )
 
-    self.area_resultados.setText(texto)
+            if stats:
+                texto += (
+                    f"{campo}\n"
+                    f"Promedio: {stats['promedio']:.2f}\n"
+                    f"Máximo: {stats['maximo']}\n"
+                    f"Mínimo: {stats['minimo']}\n\n"
+                )
 
+        self.area_resultados.setText(texto)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
