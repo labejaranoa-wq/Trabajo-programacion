@@ -87,6 +87,21 @@ class VentanaPrincipal(QMainWindow):
         boton_guardar.clicked.connect(self.guardar_resultados)
         layout_principal.addWidget(boton_guardar)
 
+        # ESTADISTICAS
+        boton_estadisticas = QPushButton("📊 Ver estadísticas")
+        boton_estadisticas.clicked.connect(self.ver_estadisticas)
+        layout_principal.addWidget(boton_estadisticas)
+
+# CATEGORIAS
+       boton_categorias = QPushButton("🎼 Distribución por género")
+       boton_categorias.clicked.connect(self.ver_categorias)
+       layout_principal.addWidget(boton_categorias)
+
+# METRICAS
+       boton_metricas = QPushButton("📈 Métricas numéricas")
+       boton_metricas.clicked.connect(self.ver_metricas)
+       layout_principal.addWidget(boton_metricas)
+
         # BOTÓN SALIR
         boton_salir = QPushButton("Salir")
         boton_salir.setStyleSheet("background-color: #e74c3c; color: white; padding: 8px; font-size: 13px;")
@@ -128,15 +143,91 @@ class VentanaPrincipal(QMainWindow):
         self.area_resultados.setText(texto)
 
     def guardar_resultados(self):
-        if not self.ultimos_resultados:
-            self.area_resultados.setText("Primero haz una búsqueda o filtrado.")
-            return
-        nombre = "resultados_guardados.csv"
-        with open(nombre, "w", newline="", encoding="utf-8") as f:
-            writer = csv.DictWriter(f, fieldnames=self.ultimos_resultados[0].keys())
-            writer.writeheader()
-            writer.writerows(self.ultimos_resultados)
-        self.area_resultados.append(f"\n✅ Guardado en {nombre}")
+    if not self.ultimos_resultados:
+        self.area_resultados.setText("Primero haz una búsqueda o filtrado.")
+        return
+
+    nombre = "resultados_guardados.csv"
+
+    with open(nombre, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=self.ultimos_resultados[0].keys()
+        )
+        writer.writeheader()
+        writer.writerows(self.ultimos_resultados)
+
+    self.area_resultados.append(
+        f"\n✅ Guardado en {nombre}"
+    )
+
+
+def ver_estadisticas(self):
+    canciones = self.df.to_dict("records")
+
+    stats = analisis.estadisticas_campo(
+        canciones,
+        "popularity"
+    )
+
+    if not stats:
+        self.area_resultados.setText(
+            "No se pudieron calcular estadísticas."
+        )
+        return
+
+    texto = (
+        f"ESTADÍSTICAS DE POPULARIDAD\n\n"
+        f"Máximo: {stats['maximo']}\n"
+        f"Mínimo: {stats['minimo']}\n"
+        f"Promedio: {stats['promedio']:.2f}\n"
+        f"Total registros: {stats['total']}"
+    )
+
+    self.area_resultados.setText(texto)
+
+
+def ver_categorias(self):
+    canciones = self.df.to_dict("records")
+
+    categorias = analisis.agrupar_por_categoria(
+        canciones,
+        "track_genre"
+    )
+
+    texto = "DISTRIBUCIÓN POR GÉNERO\n\n"
+
+    for genero, cantidad in categorias[:20]:
+        texto += f"{genero}: {cantidad}\n"
+
+    self.area_resultados.setText(texto)
+
+
+def ver_metricas(self):
+    canciones = self.df.to_dict("records")
+
+    campos = analisis.listar_campos_numericos(
+        canciones
+    )
+
+    texto = "MÉTRICAS NUMÉRICAS\n\n"
+
+    for campo in campos:
+
+        stats = analisis.estadisticas_campo(
+            canciones,
+            campo
+        )
+
+        if stats:
+            texto += (
+                f"{campo}\n"
+                f"Promedio: {stats['promedio']:.2f}\n"
+                f"Máximo: {stats['maximo']}\n"
+                f"Mínimo: {stats['minimo']}\n\n"
+            )
+
+    self.area_resultados.setText(texto)
 
 
 if __name__ == "__main__":
