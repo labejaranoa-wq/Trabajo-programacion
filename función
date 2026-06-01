@@ -1,0 +1,120 @@
+
+import sys
+import pandas as pd
+from PyQt5.QtWidgets import (
+    QApplication, QMainWindow, QWidget,
+    QVBoxLayout, QLabel, QPushButton,
+    QLineEdit, QTextEdit, QComboBox
+)
+from PyQt5.QtCore import Qt
+import analisis
+import csv
+
+class VentanaPrincipal(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("DataLab — Equipo de Análisis de Sonido")
+        self.setMinimumSize(1000, 700)
+        self.df = analisis.cargar_datos("spotify_completo.csv")
+        self.ultimos_resultados = []
+        self.setup_ui()
+
+    def setup_ui(self):
+        widget_central = QWidget()
+        self.setCentralWidget(widget_central)
+
+        layout_principal = QVBoxLayout()
+        widget_central.setLayout(layout_principal)
+
+        encabezado = QLabel("🎵 DataLab — Equipo de Análisis de Sonido")
+        encabezado.setAlignment(Qt.AlignCenter)
+        layout_principal.addWidget(encabezado)
+
+        self.campo_busqueda = QLineEdit()
+        layout_principal.addWidget(self.campo_busqueda)
+
+        boton_buscar = QPushButton("Buscar")
+        boton_buscar.clicked.connect(self.ejecutar_busqueda)
+        layout_principal.addWidget(boton_buscar)
+
+        self.selector_campo = QComboBox()
+        self.selector_campo.addItems(["popularity", "energy", "tempo", "valence", "duration_ms"])
+        layout_principal.addWidget(self.selector_campo)
+
+        self.campo_umbral = QLineEdit()
+        layout_principal.addWidget(self.campo_umbral)
+
+        boton_filtrar = QPushButton("Filtrar")
+        boton_filtrar.clicked.connect(self.ejecutar_filtro)
+        layout_principal.addWidget(boton_filtrar)
+
+        boton_estadisticas = QPushButton("📊 Ver estadísticas")
+        boton_estadisticas.clicked.connect(self.ver_estadisticas)
+        layout_principal.addWidget(boton_estadisticas)
+
+        boton_categoria = QPushButton("🎼 Distribución por género")
+        boton_categoria.clicked.connect(self.ver_categorias)
+        layout_principal.addWidget(boton_categoria)
+
+        boton_metricas = QPushButton("📈 Métricas numéricas")
+        boton_metricas.clicked.connect(self.ver_metricas)
+        layout_principal.addWidget(boton_metricas)
+
+        self.area_resultados = QTextEdit()
+        self.area_resultados.setReadOnly(True)
+        layout_principal.addWidget(self.area_resultados)
+
+    def ejecutar_busqueda(self):
+        termino = self.campo_busqueda.text()
+        canciones = self.df.to_dict("records")
+        resultados = analisis.buscar_por_termino(canciones, termino)
+        self.area_resultados.setText(str(resultados[:20]))
+
+    def ejecutar_filtro(self):
+        campo = self.selector_campo.currentText()
+        umbral = float(self.campo_umbral.text())
+        canciones = self.df.to_dict("records")
+        resultados = analisis.filtrar_por_valor(canciones, campo, umbral)
+        self.area_resultados.setText(str(resultados[:20]))
+
+    def ver_estadisticas(self):
+        canciones = self.df.to_dict("records")
+        stats = analisis.estadisticas_campo(canciones, "popularity")
+
+        texto = (
+            f"ESTADÍSTICAS DE POPULARIDAD\\n\\n"
+            f"Máximo: {stats['maximo']}\\n"
+            f"Mínimo: {stats['minimo']}\\n"
+            f"Promedio: {stats['promedio']:.2f}\\n"
+            f"Total registros: {stats['total']}"
+        )
+        self.area_resultados.setText(texto)
+
+    def ver_categorias(self):
+        canciones = self.df.to_dict("records")
+        categorias = analisis.agrupar_por_categoria(canciones, "track_genre")
+
+        texto = "DISTRIBUCIÓN POR GÉNERO\\n\\n"
+        for genero, cantidad in categorias[:20]:
+            texto += f"{genero}: {cantidad}\\n"
+
+        self.area_resultados.setText(texto)
+
+    def ver_metricas(self):
+        canciones = self.df.to_dict("records")
+        campos = analisis.listar_campos_numericos(canciones)
+
+        texto = "MÉTRICAS NUMÉRICAS\\n\\n"
+
+        for campo in campos:
+            stats = analisis.estadisticas_campo(canciones, campo)
+            if stats:
+                texto += f"{campo}: promedio={stats['promedio']:.2f}, max={stats['maximo']}, min={stats['minimo']}\\n"
+
+        self.area_resultados.setText(texto)
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    ventana = VentanaPrincipal()
+    ventana.show()
+    sys.exit(app.exec_())
